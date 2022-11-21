@@ -2,15 +2,15 @@ class PartyFlatsController < ApplicationController
     before_action :set_party_flat, only: [:show, :edit, :update, :destroy]
 
     def index
-        @party_flats = Party_flat.all
+        @party_flats = PartyFlat.all
     end
 
     def new
-        @party_flat = Party_flat.new
+        @party_flat = PartyFlat.new
     end
 
     def create
-        @party_flat = Party_flat.new(party_flat_params)
+        @party_flat = PartyFlat.new(party_flat_params)
         if @party_flat.save
             redirect_to party_flats_path
         else 
@@ -19,7 +19,7 @@ class PartyFlatsController < ApplicationController
     end
 
     def show
-        @party_flat = Party_flat.find(params[:id])
+        @party_flat = PartyFlat.find(params[:id])
     end
 
     def edit
@@ -45,6 +45,6 @@ class PartyFlatsController < ApplicationController
     end
 
     def set_party_flat
-        @party_flat = Party_flat.find(params[:id])
+        @party_flat = PartyFlat.find(params[:id])
     end
 end
