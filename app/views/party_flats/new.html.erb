@@ -1,0 +1,14 @@
+<div class="container col-6">
+<h1>Hello guys <i class="fa-solid fa-beer-mug-empty"></i></h1>
+<%= simple_form_for(@party_flat) do |f| %>
+  <%= f.input :localisation %>
+  <%= f.input :description %>
+  <%= f.input :surface %>
+  <%= f.input :people_capacity %>
+  <%= f.input :bed_capacity %>
+  <%= f.input :picture_url%>
+  <%= f.input :number_of_room %>
+  <%= f.input :agrement_list %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+</div>
