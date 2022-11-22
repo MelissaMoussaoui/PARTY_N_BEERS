@@ -1,6 +1,7 @@
 class PartyFlatsController < ApplicationController
   before_action :set_party_flat, only: [:show, :edit, :update, :destroy]
 
+<<<<<<< HEAD
   def index
     @party_flats = policy_scope(PartyFlat)
   end
@@ -17,9 +18,14 @@ class PartyFlatsController < ApplicationController
       redirect_to party_flats_path
     else
       render :new, status: :unprocessable_entity
+=======
+    def index
+        @party_flats = policy_scope(PartyFlat)
+>>>>>>> a162a2fd40c8f710f7fea09b9d7a28e65964b94c
     end
   end
 
+<<<<<<< HEAD
   def show
     authorize @party_flat
   end
@@ -34,6 +40,11 @@ class PartyFlatsController < ApplicationController
       redirect_to party_flat_path(@party_flat)
     else
       render :new, status: :unprocessable_entity
+=======
+    def new
+        @party_flat = PartyFlat.new
+        authorize @party_flat
+>>>>>>> a162a2fd40c8f710f7fea09b9d7a28e65964b94c
     end
   end
 

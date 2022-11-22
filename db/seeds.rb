@@ -15,7 +15,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Cleaning database..."
-Users.destroy_all
+User.destroy_all
 
 puts "Creating users..."
 maeva = { first_name: "Maeva", last_name: "Ghennam", gender: "F", phone_number:"0654566787", date_of_birth: "14/05/1997" }
@@ -24,12 +24,12 @@ jessi = { first_name: "Jessica", last_name: "Errero", gender: "F", phone_number:
 
 [maeva, nabilla, jessi].each do |attributes|
   user = User.create!(attributes)
-  puts "Created #{user.name}"
+  puts "Created #{user.first_name}"
 end
 puts "Finished!"
 
 puts "Cleaning database..."
-Party_flats.destroy_all
+Party_flat.destroy_all
 
 puts "Creating flats..."
 paris = { locatisation: "32 Rue Beauregard, 75002, Paris", people_capacity: 25, surface: 100, description: "Magnifique appartement en plein centre de Paris", bed_capacity: 6 , number_of_room: 3, picture_url: "https://www.book-a-flat.com/magazine/fr/terrasses-appartements-paris#jp-carousel-1918", agrement_list: "cuisine, wifi, terrasse, jaccuzzi, sono, stromboscope, pas de limite d'heure, tireuse à bière", id_users: 1 }
@@ -38,12 +38,12 @@ penthouse = { locatisation: "35 Rue Pablo Picasso, 92000, Nanterre", people_capa
 
 [paris, loft, penthouse].each do |attributes|
   party_flat = Party_flat.create!(attributes)
-  puts "Created #{party_flat.name}"
+  puts "Created #{party_flat.localisation}"
 end
 puts "Finished!"
 
 puts "Cleaning database..."
-Bookings.destroy_all
+Booking.destroy_all
 
 puts "Creating bookings..."
 maeva_booking = { start_date: "Maeva", end_date: "Ghennam", id_users: 1, id_partys: 1 }
@@ -52,6 +52,6 @@ jessi_booking = { start_date: "Jessica", end_date: "Errero", id_users: 3, id_par
 
 [maeva_booking, nabilla_booking, jessi_booking].each do |attributes|
   booking = Booking.create!(attributes)
-  puts "Created #{booking.name}"
+  puts "Created #{booking.start_date}"
 end
 puts "Finished!"
