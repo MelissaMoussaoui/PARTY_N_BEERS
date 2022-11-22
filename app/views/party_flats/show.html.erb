@@ -1,0 +1,6 @@
+<p> This is show party_flats </p>
+
+<% if policy(@party_flat).edit? %>
+  <%= link_to "Edit this party flat", edit_party_flat_path(@party_flat) %> |
+<% end %>
+<%= button_to "Destroy this party flat", @party_flat, method: :delete if policy(@party_flat).destroy? %>
