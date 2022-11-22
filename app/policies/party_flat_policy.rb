@@ -8,7 +8,7 @@ class PartyFlatPolicy < ApplicationPolicy
       def resolve
         scope.all
       end
-      
+
     def show?
       true
     end
@@ -22,7 +22,7 @@ class PartyFlatPolicy < ApplicationPolicy
       # record: the restaurant passed to the `authorize` method in controller
       # user: the `current_user` signed in with Devise
     end
-  
+
     def destroy?
       record.user == user
     end
