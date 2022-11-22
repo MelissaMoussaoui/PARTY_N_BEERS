@@ -2,12 +2,12 @@ class PartyFlatsController < ApplicationController
     before_action :set_party_flat, only: [:show, :edit, :update, :destroy]
 
     def index
-        @party_flats = PartyFlat.all
-        authorize @party_flat
+        @party_flats = policy_scope(PartyFlat)
     end
 
     def new
         @party_flat = PartyFlat.new
+        authorize @party_flat
     end
 
     def create

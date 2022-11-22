@@ -8,6 +8,7 @@ class PartyFlatPolicy < ApplicationPolicy
       def resolve
         scope.all
       end
+    end
       
     def show?
       true
@@ -27,5 +28,4 @@ class PartyFlatPolicy < ApplicationPolicy
       record.user == user
     end
 
-  end
 end
