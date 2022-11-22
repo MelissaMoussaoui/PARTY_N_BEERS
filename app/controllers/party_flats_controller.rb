@@ -3,6 +3,7 @@ class PartyFlatsController < ApplicationController
 
     def index
         @party_flats = PartyFlat.all
+        authorize @party_flat
     end
 
     def new
@@ -11,6 +12,8 @@ class PartyFlatsController < ApplicationController
 
     def create
         @party_flat = PartyFlat.new(party_flat_params)
+        @party_flat.user = current_user
+        authorize @party_flat
         if @party_flat.save
             redirect_to party_flats_path
         else 
@@ -19,13 +22,15 @@ class PartyFlatsController < ApplicationController
     end
 
     def show
-        @party_flat = PartyFlat.find(params[:id])
+        authorize @party_flat
     end
 
     def edit
+        authorize @party_flat
     end
 
     def update
+        authorize @party_flat
         if @party_flat.update(party_flat_params)
             redirect_to party_flat_path(@party_flat)
         else 
@@ -34,6 +39,7 @@ class PartyFlatsController < ApplicationController
     end
 
     def destroy 
+        authorize @party_flat
         @party_flat.destroy
         redirect_to party_flats_path, status: :see_other
     end
