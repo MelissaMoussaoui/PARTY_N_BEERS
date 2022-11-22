@@ -5,6 +5,7 @@ class PartyFlatPolicy < ApplicationPolicy
     #   scope.all
     # end
 
+<<<<<<< HEAD
       def resolve
         scope.all
       end
@@ -13,20 +14,26 @@ class PartyFlatPolicy < ApplicationPolicy
       
     def show?
       true
+=======
+    def resolve
+      scope.all
+>>>>>>> 349dcc46dfdfa16d4ae7fa0c4a5cced774fda9a1
     end
+  end
 
-    def create?
-      true
-    end
+  def show?
+    true
+  end
 
-    def update?
-      record.user == user
-      # record: the restaurant passed to the `authorize` method in controller
-      # user: the `current_user` signed in with Devise
-    end
-  
-    def destroy?
-      record.user == user
-    end
+  def create?
+    true
+  end
 
+  def update?
+    records.user == user
+  end
+
+  def destroy?
+    records.user == user
+  end
 end
