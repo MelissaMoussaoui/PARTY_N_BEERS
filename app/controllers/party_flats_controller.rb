@@ -7,6 +7,7 @@ class PartyFlatsController < ApplicationController
 
   def new
     @party_flat = PartyFlat.new
+    authorize @party_flat
   end
 
   def create
@@ -17,8 +18,6 @@ class PartyFlatsController < ApplicationController
       redirect_to party_flats_path
     else
       render :new, status: :unprocessable_entity
-    def index
-        @party_flats = policy_scope(PartyFlat)
     end
   end
 
@@ -36,9 +35,6 @@ class PartyFlatsController < ApplicationController
       redirect_to party_flat_path(@party_flat)
     else
       render :new, status: :unprocessable_entity
-    def new
-        @party_flat = PartyFlat.new
-        authorize @party_flat
     end
   end
 
@@ -57,3 +53,4 @@ class PartyFlatsController < ApplicationController
   def set_party_flat
     @party_flat = PartyFlat.find(params[:id])
   end
+end
