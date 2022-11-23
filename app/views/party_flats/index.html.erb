@@ -17,8 +17,11 @@
   <% @party_flats.each do |party_flat| %>
         <div class="col">
           <img class="img-thumbnail" src="<%= party_flat.picture_url %>" alt="photo">
-          <%= party_flat.localisation %>
-        </div>
+          <%= link_to party_flat_path(party_flat), class:"text-decoration-none" do %>
+              <div class="card-category">
+            <%= party_flat.localisation %>
+          </div>
 <% end %>
   </div>
+      <% end %>
 </div>

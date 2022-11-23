@@ -7,4 +7,8 @@
 <p><%= @party_flat.number_of_room %></p>
 <p><%= @party_flat.people_capacity %></p>
 <p><%= @party_flat.bed_capacity %></p>
+<%= link_to "Remove", destroy_path(@party_flat),
+data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+class: "ms-3 text-danger"
+%>
 </div>
