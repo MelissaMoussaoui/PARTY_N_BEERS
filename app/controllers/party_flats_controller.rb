@@ -5,10 +5,10 @@ class PartyFlatsController < ApplicationController
     @party_flats = policy_scope(PartyFlat)
     @markers = @party_flats.geocoded.map do |party_flat|
       {
-        lat: flat.latitude,
-        lng: flat.longitude,
+        lat: party_flat.latitude,
+        lng: party_flat.longitude,
         info_window: render_to_string(partial: "info_window", locals: {party_flat: party_flat}),
-        image_url: helpers.asset_url("logo.png")
+        image_url: helpers.asset_url("beer.png")
       }
     end
   end
