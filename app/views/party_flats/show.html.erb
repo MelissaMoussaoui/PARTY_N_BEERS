@@ -1,6 +1,10 @@
-<p> This is show party_flats </p>
 
-<% if policy(@party_flat).edit? %>
-  <%= link_to "Edit this party flat", edit_party_flat_path(@party_flat) %> |
-<% end %>
-<%= button_to "Destroy this party flat", @party_flat, method: :delete if policy(@party_flat).destroy? %>
+<div class="container margin-top-negative py-3">
+<img class="img-thumbnail" src="<%= @party_flat.picture_url %>" alt="photo">
+<p><%= @party_flat.description %></p>
+<p><%= @party_flat.localisation %></p>
+<p><%= @party_flat.surface %></p>
+<p><%= @party_flat.number_of_room %></p>
+<p><%= @party_flat.people_capacity %></p>
+<p><%= @party_flat.bed_capacity %></p>
+</div>

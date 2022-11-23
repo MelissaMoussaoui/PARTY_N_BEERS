@@ -1,1 +1,24 @@
-<p> This is index party_flats </p>
+<p>this is home page</p>
+<div class="cover mb-4 d-flex align-items-center justify-content-center">
+  <div class="text-center text-white">
+    <h1>Notre slogan</h1>
+    <h3 class="typed-js" data-controller="typed-js"></h3>
+  </div>
+</div>
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="mb-0">Find a party!</h3>
+    <%= link_to "Create a Party", new_party_flat_path, class: "btn btn-flat" %>
+  </div>
+
+
+<div class="container">
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+  <% @party_flats.each do |party_flat| %>
+        <div class="col">
+          <img class="img-thumbnail" src="<%= party_flat.picture_url %>" alt="photo">
+          <%= party_flat.localisation %>
+        </div>
+<% end %>
+  </div>
+</div>
