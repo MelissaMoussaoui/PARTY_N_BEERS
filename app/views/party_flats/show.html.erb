@@ -1,12 +1,15 @@
 
 <div class="container margin-top-negative py-3">
-<img class="img-thumbnail" src="<%= @party_flat.picture_url %>" alt="photo">
+<% @party_flat.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 <p><%= @party_flat.description %></p>
 <p><%= @party_flat.localisation %></p>
 <p><%= @party_flat.surface %></p>
 <p><%= @party_flat.number_of_room %></p>
 <p><%= @party_flat.people_capacity %></p>
 <p><%= @party_flat.bed_capacity %></p>
+<p><%= @party_flat.agrement_list %></p>
 <%= link_to "Remove", destroy_path(@party_flat),
 data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
 class: "ms-3 text-danger"
