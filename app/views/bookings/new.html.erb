@@ -1,18 +1,8 @@
-<h1>booking new</h1>    
-    
-    <div class="col-4">
-      <div class="flat-show-card">
-        <h5>Book this place!</h5>
-
-        <form action="">
-          <div class="input-group">
-            <span class="input-group-text" id="start-date-label">From:</span>
-            <input type="text" class="form-control" placeholder="12/10/2017" aria-label="start-date" aria-describedby="start-date-label">
-          </div>
-          <div class="input-group mt-2">
-            <span class="input-group-text" id="end-date-label">To:</span>
-            <input type="text" class="form-control" placeholder="18/10/2017" aria-label="end-date" aria-describedby="start-date-label">
-          </div>
-          <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%">
-        </form>
-      </div>
+<div class="container col-6">
+<h1>Hello guys <i class="fa-solid fa-beer-mug-empty"></i></h1>
+<%= simple_form_for [@party_flat, @booking] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+</div>

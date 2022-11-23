@@ -9,11 +9,12 @@ class BookingsController < ApplicationController
     end
 
     def create
-        @booking = Booking.new(booking_params)
-        @booking.party_flat = @party_flat
-        authorize @booking
+      @booking = Booking.new(booking_params)
+      @booking.party_flat = @party_flat
+      @booking.user = current_user
+      authorize @booking
         @booking.save
-        redirect_to party_flat_path(party_flat)
+      redirect_to party_flat_path(@party_flat)
     end
 
     def destroy
