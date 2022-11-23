@@ -19,10 +19,10 @@ class PartyFlatPolicy < ApplicationPolicy
   end
 
   def update?
-    records.user == user
+    record.user == user
   end
 
   def destroy?
-    records.user == user
+    record.user == user
   end
 end

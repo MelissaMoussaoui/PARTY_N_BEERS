@@ -11,6 +11,7 @@ class PartyFlatsController < ApplicationController
         image_url: helpers.asset_url("beer.png")
       }
     end
+
   end
 
   def new
@@ -55,7 +56,7 @@ class PartyFlatsController < ApplicationController
   private
 
   def party_flat_params
-    params.require(:party_flat).permit(:localisation, :people_capacity, :description, :bed_capacity, :number_of_room, :picture_url, :agrement_list, :id_users)
+    params.require(:party_flat).permit(:localisation, :people_capacity, :description, :bed_capacity, :number_of_room, :surface, :agrement_list, photos:[])
   end
 
   def set_party_flat

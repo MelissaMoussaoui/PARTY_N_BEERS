@@ -9,7 +9,7 @@
   <%= f.input :surface %>
   <%= f.input :people_capacity %>
   <%= f.input :bed_capacity %>
-  <%= f.input :picture_url%>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.input :number_of_room %>
   <%= f.input :agrement_list %>
   <%= f.submit class: "btn btn-primary" %>

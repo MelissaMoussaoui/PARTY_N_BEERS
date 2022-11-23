@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"end
 
+  resources :party_flats, only: :destroy, as: "destroy"
+
   resources :party_flats do
     resources :bookings, only: [:new, :create]
   end
