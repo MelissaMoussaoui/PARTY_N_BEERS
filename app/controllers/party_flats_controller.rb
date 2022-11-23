@@ -3,6 +3,12 @@ class PartyFlatsController < ApplicationController
 
   def index
     @party_flats = policy_scope(PartyFlat)
+    @markers = @party_flats.geocoded.map do |party_flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+        info_window: render_to_string(partial: "info_window", locals: {party_flat: party_flat})
+      }
   end
 
   def new
