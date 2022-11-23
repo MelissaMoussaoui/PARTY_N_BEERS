@@ -1,0 +1,8 @@
+<div class="container col-6">
+<h1>Hello guys <i class="fa-solid fa-beer-mug-empty"></i></h1>
+<%= simple_form_for [@party_flat, @booking] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+</div>

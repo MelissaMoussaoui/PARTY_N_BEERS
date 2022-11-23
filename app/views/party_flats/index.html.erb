@@ -16,7 +16,9 @@
   <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
   <% @party_flats.each do |party_flat| %>
         <div class="col">
+        <% if party_flat.photos.attached? %>
            <%= cl_image_tag party_flat.photos.first.key, height: 300, width: 400, crop: :fill%>
+           <% end %>
           <%= link_to party_flat_path(party_flat), class:"text-decoration-none" do %>
         <% end %>
   </div>
