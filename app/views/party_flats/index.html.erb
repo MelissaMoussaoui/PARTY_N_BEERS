@@ -1,14 +1,14 @@
 <p>this is home page</p>
 <div class="cover mb-4 d-flex align-items-center justify-content-center">
   <div class="text-center text-white">
-    <h1>Notre slogan</h1>
+    <h1>Good places, good beers, good times!</h1>
     <h3 class="typed-js" data-controller="typed-js"></h3>
   </div>
 </div>
 <div class="container py-5">
   <div class="d-flex align-items-center justify-content-between mb-3">
     <h3 class="mb-0">Find a party!</h3>
-    <%= link_to "Create a Party", new_party_flat_path, class: "btn btn-flat" %>
+    <%= link_to "Create a Party", new_party_flat_path, class: "btn" %>
   </div>
 
 
@@ -28,11 +28,17 @@
   <div class="row">
     <% @party_flats.each do |party_flat| %>
       <div class="co-12 col-sm-6 col-md-4 mb-3">
-        <%= link_to party_flat_path(party_flat), class:"text-decoration-none" do %>
-          <div class="card-category">
-            <%= party_flat.localisation %>
-          </div>
-        <% end %>
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="#" alt="Card image cap">
+            <div class="card-category">
+          <%= link_to party_flat_path(party_flat), class:"text-decoration-none" do %>
+              <div class="card-body">
+                <p class="card-text"><%= party_flat.localisation %></p>
+                <p class="card-text-2"><%= party_flat.description %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>
