@@ -33,9 +33,9 @@ puts "Finished!"
 puts "Cleaning database..."
 
 puts "Creating flats..."
-paris = { localisation: "32 Rue Beauregard, 75002, Paris", people_capacity: 25, surface: 100, description: "Magnifique appartement en plein centre de Paris", bed_capacity: 6 , number_of_room: 3, picture_url: "https://www.book-a-flat.com/magazine/fr/terrasses-appartements-paris#jp-carousel-1918", agrement_list: "cuisine, wifi, terrasse, jaccuzzi, sono, stromboscope, pas de limite d'heure, tireuse à bière", user_id: User.all.sample.id }
-loft = { localisation: "16 Villa Gaudelet, 75011, Paris", people_capacity: 170, surface: 4, description: "Superbe loft avec piscine en plein Paris", bed_capacity: 20, number_of_room: 5, picture_url: "https://www.notreloft.com/images/2018/12/loft-industriel-brique-parquet-00100-1500x1003.jpg", agrement_list: "cuisine, wifi, espace extérieur, piscine, sono, stromboscope, pas de voisinage, parking, tennis", user_id: User.all.sample.id}
-penthouse = { localisation: "35 Rue Pablo Picasso, 92000, Nanterre", people_capacity: 120, surface: 400, description: "Incroyable Penthouse avec tennis à Nanterre", bed_capacity: 36, number_of_room: 12, picture_url: "https://assets-news.housing.com/news/wp-content/uploads/2021/09/08210220/What-are-penthouses-and-how-popular-are-they-in-India-shutterstock_1595790271.jpg", agrement_list: "espace extérieur, piscine, sono, stromboscope, pas de limite d'heure, tireuse à bière", user_id: User.all.sample.id }
+paris = { localisation: "32 Rue Beauregard, 75002, Paris", people_capacity: 25, surface: 100, description: "Magnifique appartement en plein centre de Paris", bed_capacity: 6 , number_of_room: 3, agrement_list: "cuisine, wifi, terrasse, jaccuzzi, sono, stromboscope, pas de limite d'heure, tireuse à bière", user_id: User.all.sample.id }
+loft = { localisation: "16 Villa Gaudelet, 75011, Paris", people_capacity: 170, surface: 4, description: "Superbe loft avec piscine en plein Paris", bed_capacity: 20, number_of_room: 5, agrement_list: "cuisine, wifi, espace extérieur, piscine, sono, stromboscope, pas de voisinage, parking, tennis", user_id: User.all.sample.id}
+penthouse = { localisation: "35 Rue Pablo Picasso, 92000, Nanterre", people_capacity: 120, surface: 400, description: "Incroyable Penthouse avec tennis à Nanterre", bed_capacity: 36, number_of_room: 12, agrement_list: "espace extérieur, piscine, sono, stromboscope, pas de limite d'heure, tireuse à bière", user_id: User.all.sample.id }
 
 [paris, loft, penthouse].each do |attributes|
   party_flat = PartyFlat.create!(attributes)
