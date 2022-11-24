@@ -1,4 +1,3 @@
-<p>this is home page</p>
 <div class="cover mb-4 d-flex align-items-center justify-content-center">
   <div class="text-center text-white">
     <h1>Good places, good beers, good times!</h1>
@@ -12,39 +11,40 @@
   </div>
 
 
-<div class="container">
-  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-  <% @party_flats.each do |party_flat| %>
-        <div class="col">
-        <% if party_flat.photos.attached? %>
-           <%= cl_image_tag party_flat.photos.first.key, height: 300, width: 400, crop: :fill%>
-           <% end %>
-          <%= link_to party_flat_path(party_flat), class:"text-decoration-none" do %>
-        <% end %>
-  </div>
-      <% end %>
-</div>
 
-
-
-  <div class="row">
+<div class="row">
     <% @party_flats.each do |party_flat| %>
-      <div class="co-12 col-sm-6 col-md-4 mb-3">
+
+<div class="flip-card">
         <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="#" alt="Card image cap">
-            <div class="card-category">
+    <p class="card-title" style="border-radius: 5px;"> <%= party_flat.localisation  %>
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+        <% if party_flat.photos.attached? %>
+            <%= cl_image_tag party_flat.photos.first.key, height: 194, width: 270, crop: :fill%>
+        <% end %>
+        
+
+
+
+    </div>
+    <div class="flip-card-back">
           <%= link_to party_flat_path(party_flat), class:"text-decoration-none" do %>
               <div class="card-body">
                 <p class="card-text"><%= party_flat.localisation %></p>
                 <p class="card-text-2"><%= party_flat.description %></p>
               </div>
-            </div>
+          
           <% end %>
-        </div>
-      </div>
-    <% end %>
+
+    </div>
+  </div>
   </div>
 </div>
+<% end %>
+</div>
+
+<div>_</div>
 
 <div style="width: 100%; height: 600px;"
   data-controller="map"
