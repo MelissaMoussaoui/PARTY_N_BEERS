@@ -1,23 +1,48 @@
-<div class="cover mb-4 d-flex align-items-center justify-content-center">
-  <div class="text-center text-white">
-    <h1>Good places, good beers, good times!</h1>
-    <h3 class="typed-js" data-controller="typed-js"></h3>
+<div
+    class="p-5 text-center"
+    style="
+      height: 400px;
+      background-image: url('https://img.freepik.com/vecteurs-libre/diverses-personnes-boivent-alcool-au-bar_107791-12529.jpg?w=2000&t=st=1669294742~exp=1669295342~hmac=76a1d23dcda7dcc9dfd77c0157d901d85fc7497ae1052645df998d354ac03418');
+      background-size: cover
+    "
+  >
+    <div class="mask" style="background-color: transparent;">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div>
+          <a class="btn" href="#!" role="button"
+          >Book a party now</a
+          >
+        </div>
+        <%= form_with url: party_flats_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a Party Flat"
+  %>
+  <%= submit_tag "Search", class: "btn" %>
+<% end %>
+        <div>
+    </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container" style="width: 100%; margin-left: auto;
+margin-right: auto; padding: 15px;">
+  <div class="align-items-center justify-content-between mb-3">
+          <h1 style="font-family: 'Lobster', cursive; text-align: center; font-size: 60px;">Good places, good beers, good times!</h1>
+
   </div>
 </div>
-<div class="container py-5">
-  <div class="d-flex align-items-center justify-content-between mb-3">
-    <h3 class="mb-0">Find a party!</h3>
-    <%= link_to "Create a Party", new_party_flat_path, class: "btn" %>
-  </div>
 
+<div class="boite px-5">
 
-
-<div class="row">
+<div class="row" style="justify-content: space-between;">
     <% @party_flats.each do |party_flat| %>
 
 <div class="flip-card">
-        <div class="card" style="width: 18rem;">
-    <p class="card-title" style="border-radius: 5px;"> <%= party_flat.localisation  %>
+        <div class="card" style="width: 18rem; background-color: transparent; border-color: transparent;">
   <div class="flip-card-inner">
     <div class="flip-card-front">
         <% if party_flat.photos.attached? %>
@@ -44,9 +69,12 @@
 <% end %>
 </div>
 
-<div>_</div>
 
-<div style="width: 100%; height: 600px;"
+
+</div>
+
+
+<div style="width: 100%; height: 600px; align-items: center;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
