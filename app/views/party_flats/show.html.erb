@@ -1,20 +1,74 @@
+<h1 class="text-center my-3">PartyNBeers</h1>
 
-<div class="container margin-top-negative py-3">
-<% @party_flat.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-<p><%= @party_flat.description %></p>
-<p><%= @party_flat.localisation %></p>
-<p><%= @party_flat.surface %></p>
-<p><%= @party_flat.number_of_room %></p>
-<p><%= @party_flat.people_capacity %></p>
-<p><%= @party_flat.bed_capacity %></p>
-<p><%= @party_flat.agrement_list %></p>
-<%= link_to "Remove", destroy_path(@party_flat),
-data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-class: "ms-3 text-danger"
-%>
+<div class="container">
+<div class=" shadow-lg p-3 my-2 bg-body rounded">
+<div class="row g-0">
+  <div class="col-sm-6 col-md-6">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <% @party_flat.photos.each do |photo| %>
+          <div class="carousel-item active">
+            <%= cl_image_tag photo.key%>
+          </div>
+            <% end %>
+        </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+      </div>
+  </div>
+
+    <div class="col-8 col-md-4 align-self-center m-3">
+        <h4> You can contact <%= @party_flat.user.email %> for more details.</h4>
+    <div class="col-8">
+      <div class="flat-show-card">
+        <%= link_to "Book this place !", new_party_flat_booking_path(@party_flat), class: "btn" %>
+    </div>
+           <% if @party_flat.user == current_user %>
+              <%= link_to "Remove", destroy_path(@party_flat),data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },class: "text-danger"%>
+              <%= link_to "Edit", edit_party_flat_path(@party_flat), class: "text-danger" %>
+            <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
+      <p class="fit-content"><%= @party_flat.surface %> m2, <%= @party_flat.localisation %></p>
 
-<%= link_to 'book', new_party_flat_booking_path(@party_flat) %>
+      <div class="border border-2 border-dark rounded-3 shadow-lg p-3 bg-body rounded">
+        <div class="row align-items-start text-center">
+          <div class="col">
+            <p><%= @party_flat.surface %> m2</p>
+          </div>
+          <div class="col">
+            <p><%= @party_flat.number_of_room %> pieces</p>
+          </div>
+          <div class="col">
+          <p><%= @party_flat.people_capacity %> personnes</p>
+          </div>
+      </div>
+        <div class="row align-items-start text-center">
+          <div class="col">
+            <p><%= @party_flat.bed_capacity %> lits</p>
+          </div>
+            <div class="col">
+            <p><%= @party_flat.agrement_list %></p>
+            </div>
+
+        </div>
+         </div>
+<div class="shadow-lg p-3 my-5 bg-body rounded">
+  <h1>Description</h1>
+        <p><%= @party_flat.description %></p>
+</div>
+
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+</div>
