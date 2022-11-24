@@ -6,7 +6,6 @@
     border: transparent;
     border-radius: 5px;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
-    margin-bottom: 10px;
   }
   
   /* This container is needed to position the front and back side */
@@ -18,7 +17,6 @@
     transition: transform 0.8s;
     transform-style: preserve-3d;
     border-radius: 5px;
-    margin-bottom: 10px;
   }
   
   /* Do an horizontal flip when you move the mouse over the flip box container */
@@ -33,7 +31,6 @@
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
-    margin-bottom: 10px;
   }
   
   /* Style the front side (fallback if image is missing) */

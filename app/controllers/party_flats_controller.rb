@@ -2,6 +2,9 @@ class PartyFlatsController < ApplicationController
   before_action :set_party_flat, only: [:show, :edit, :update, :destroy]
 
   def index
+    if params[:query].present?
+      @party_flats = PartyFlat.where(localisation: params[:query])
+    else
     @party_flats = policy_scope(PartyFlat)
     @markers = @party_flats.geocoded.map do |party_flat|
       {
@@ -11,6 +14,7 @@ class PartyFlatsController < ApplicationController
         image_url: helpers.asset_url("beer.png")
       }
     end
+  end
 
   end
 
