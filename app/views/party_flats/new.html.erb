@@ -1,5 +1,10 @@
 <div class="container col-6">
-<h1>Create a new Party <i class="fa-solid fa-beer-mug-empty"></i></h1>
+<div class="container py-5">
+<h1 style="font-family: 'Lobster', cursive; text-align: center; font-size: 60px;">Add a new Party <i class="fa-solid fa-beer-mug-empty"></i></h1>
+</div>
+<div class="container py-5 py-10" style="box-shadow: 10px 41px 95px -1px rgba(77,68,68,0.75);
+-webkit-box-shadow: 10px 41px 95px -1px rgba(77,68,68,0.75);
+-moz-box-shadow: 10px 41px 95px -1px rgba(77,68,68,0.75);">
 <%= simple_form_for(@party_flat) do |f| %>
   <%= f.input :name %>
   <%= f.input :localisation,
@@ -16,4 +21,5 @@
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit class: "btnsearch" %>
 <% end %>
+</div>
 </div>
