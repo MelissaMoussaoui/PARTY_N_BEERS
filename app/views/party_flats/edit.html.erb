@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Edit your Party</h1>
+  <h1 style="font-family: 'Lobster', cursive; text-align: center; font-size: 60px;">Edit your Party</h1>
   <%= simple_form_for(@party_flat) do |f| %>
   <%= f.input :description %>
   <%= f.input :surface %>
@@ -10,7 +10,7 @@
   <%= f.input :agrement_list %>
   <%= f.input :price %>
   <div class="mt-2">
-      <%= f.submit class: "btn btn-info", value: "Edit your a Party"%>
+      <%= f.submit class: "btn btn-info", value: "Edit your Party"%>
     <% end %>
                   <div style="display: flex; flex-wrap: nowrap;">
     <%= link_to party_flat_path(@party_flat), class: "btn btn-danger",
