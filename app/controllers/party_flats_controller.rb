@@ -28,6 +28,7 @@ class PartyFlatsController < ApplicationController
     @party_flat.user = current_user
     authorize @party_flat
     if @party_flat.save
+      flash.alert = "Your Party at #{@party_flat.localisation} has been succesfully added to Party'n'Beers."
       redirect_to party_flats_path
     else
       render :new, status: :unprocessable_entity

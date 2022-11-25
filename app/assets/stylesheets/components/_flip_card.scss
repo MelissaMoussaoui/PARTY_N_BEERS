@@ -47,7 +47,7 @@
 /* Style the back side */
 .flip-card-back {
   
-  background-color: rgba(230, 214, 190, 0.826);
+  background-color: rgba(255, 251, 244, 0.826);
   color: white;
   transform: rotateY(180deg);
   box-shadow: -2px 0px 16px 6px rgba(174,174,174,1);
@@ -56,17 +56,13 @@
 }
 
 .backcard {
-  background-color: rgba(230, 214, 190, 0.826);
-  box-shadow: -2px 0px 16px 6px rgb(226, 226, 226);
-  -webkit-box-shadow: -2px 0px 16px 6px rgba(226,226,226,1);
-  -moz-box-shadow: -2px 0px 16px 6px rgba(226,226,226,1);
+  background-color: rgba(255, 251, 244, 0.826);
+  
 }
 
 .backcard2 {
-  background-color: rgba(230, 214, 190, 0.826);
-  box-shadow: -2px 0px 16px 6px rgb(226, 226, 226);
-  -webkit-box-shadow: -2px 0px 16px 6px rgba(226,226,226,1);
-  -moz-box-shadow: -2px 0px 16px 6px rgba(226,226,226,1);
+  background-color: rgba(255, 251, 244, 0.826);
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

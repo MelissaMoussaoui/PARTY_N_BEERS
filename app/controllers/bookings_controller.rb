@@ -14,6 +14,7 @@ class BookingsController < ApplicationController
       @booking.user = current_user
       authorize @booking
         @booking.save
+        flash.alert = "Thanks for booking with PartyNBeers, your Party is planned at #{@party_flat.localisation}."
       redirect_to party_flat_path(@party_flat)
     end
 

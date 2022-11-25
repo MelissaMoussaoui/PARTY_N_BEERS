@@ -1,6 +1,6 @@
 <div class="container col-6">
 <div class="container py-5">
-<h1 style="font-family: 'Lobster', cursive; text-align: center; font-size: 60px;">Add a new Party </h1>
+<h1 style="font-family: 'Lobster', cursive; text-align: center; font-size: 60px;">Plan a new Party </h1>
 </div>
 <div class="container py-5 py-10" style="box-shadow: 10px 41px 95px -1px rgba(77,68,68,0.75);
 -webkit-box-shadow: 10px 41px 95px -1px rgba(77,68,68,0.75);
@@ -14,11 +14,10 @@
   <%= f.input :surface %>
   <%= f.input :people_capacity %>
   <%= f.input :bed_capacity %>
-  <%= f.input :number_of_room %>
+  <%= f.input :number_of_room, label:"Price per night" %>
   <%= f.input :agrement_list %>
-  <%= f.input :price %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit class: "btn btn-info", value: "Add a Party"%>
+  <%= f.submit class: "btn btn-info", value: "My Party is done!"%>
 <% end %>
 </div>
 </div>
