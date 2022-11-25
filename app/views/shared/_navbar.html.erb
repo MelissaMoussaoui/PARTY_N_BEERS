@@ -5,6 +5,7 @@
     <% end %>
       
 
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -13,8 +14,16 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home",party_flats_path, class: "nav-link" %>
+          <%= link_to "Home",party_flats_path, class: "nav-link", style: "padding-right: 40px" %>
           </li>
+
+      <li class="nav-item active">
+        <%= link_to "Create a Party",new_party_flat_path, class: "nav-link", style: "padding-right: 40px" %>
+      </li>
+
+        <li class="nav-item active">
+        <%= link_to "My bookings",new_party_flat_path, class: "nav-link", style: "padding-right: 40px" %>
+      </li>
         <li class="nav-item dropdown">
             <%= image_tag "https://cdn-icons-png.flaticon.com/512/64/64572.png", class: "fa-solid fa-user avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

@@ -1,6 +1,7 @@
 <div class="container col-6">
-<h1>Hello guys <i class="fa-solid fa-beer-mug-empty"></i></h1>
+<h1>Create a new Party <i class="fa-solid fa-beer-mug-empty"></i></h1>
 <%= simple_form_for(@party_flat) do |f| %>
+  <%= f.input :name %>
   <%= f.input :localisation,
     input_html: {data: {address_autocomplete_target: "address"}},
     wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}  
@@ -9,9 +10,10 @@
   <%= f.input :surface %>
   <%= f.input :people_capacity %>
   <%= f.input :bed_capacity %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.input :number_of_room %>
   <%= f.input :agrement_list %>
-  <%= f.submit class: "btn btn-primary" %>
+  <%= f.input :price %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.submit class: "btnsearch" %>
 <% end %>
 </div>

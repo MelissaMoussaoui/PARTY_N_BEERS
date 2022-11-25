@@ -36,9 +36,9 @@ margin-right: auto; padding: 15px;">
   </div>
 </div>
 
-<div class="boite px-5">
+<div class="boite px-3">
 
-<div class="row" style="justify-content: space-between;">
+<div class="row" style="justify-content: space-around; margin-bottom: 10px;">
     <% @party_flats.each do |party_flat| %>
 
 <div class="flip-card">
@@ -46,18 +46,25 @@ margin-right: auto; padding: 15px;">
   <div class="flip-card-inner">
     <div class="flip-card-front">
         <% if party_flat.photos.attached? %>
-            <%= cl_image_tag party_flat.photos.first.key, height: 194, width: 270, crop: :fill%>
+            <%= cl_image_tag party_flat.photos.first.key, height: 230, width: 380, crop: :fill%>
         <% end %>
         
-
 
 
     </div>
     <div class="flip-card-back">
           <%= link_to party_flat_path(party_flat), class:"text-decoration-none" do %>
               <div class="card-body">
-                <p class="card-text"><%= party_flat.localisation %></p>
-                <p class="card-text-2"><%= party_flat.description %></p>
+                <div class="backcard">
+                  <p class="card-text-2"><%= party_flat.name %></p>
+                  <p class="card-text-2"><%= party_flat.description %></p>
+                  <p class="card-text-2"><%= party_flat.localisation %></p>
+                </div>
+                <div class="backcard2">
+                  <p class="backcardtext2"><%= party_flat.people_capacity %> <%= image_tag "https://cdn-icons-png.flaticon.com/512/42/42175.png" %></p>
+                  <p class="backcardtext2"><%= party_flat.price %> $/night</p>
+                  <p class="backcardtext2"><%= party_flat.bed_capacity %> <%= image_tag "https://cdn-icons-png.flaticon.com/512/632/632339.png" %></p>
+                </div>
               </div>
           
           <% end %>
@@ -70,11 +77,13 @@ margin-right: auto; padding: 15px;">
 </div>
 
 
-
 </div>
 
-
-<div style="width: 100%; height: 600px; align-items: center;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div style="width: auto; margin-left: 15px;
+margin-right: 15px; padding: 30px;">
+  <div style="width: 100%; height: 600px; align-items: center;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
