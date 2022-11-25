@@ -1,6 +1,7 @@
 <div class="container">
-  <h1>Edit flat</h1>
+  <h1>Edit your Party</h1>
   <%= simple_form_for(@party_flat) do |f| %>
+  <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :surface %>
   <%= f.input :people_capacity %>
@@ -8,8 +9,9 @@
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.input :number_of_room %>
   <%= f.input :agrement_list %>
+  <%= f.input :price %>
   <div class="mt-2">
-      <%= f.submit class: "btn btn-primary" %>
+      <%= f.submit class: "btnsearch"%>
     <% end %>
     <%= link_to party_flat_path(@party_flat), class: "btn btn-danger",
       method: :delete,

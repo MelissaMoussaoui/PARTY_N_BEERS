@@ -1,49 +1,91 @@
 .flip-card {
-    background-color: transparent;
-    display: flex;
-    width: 298px;
-    height: 210px;
-    border: transparent;
-    border-radius: 5px;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
-  }
+  background-color: transparent;
+  display: flex;
+  width: 380px;
+  height: 230px;
+  border: transparent;
+  border-radius: 5px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 380px;
+  height: 230px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-radius: 5px;
+  border-color: transparent;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 380px;
+  height: 220px;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
   
-  /* This container is needed to position the front and back side */
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-    border-radius: 5px;
-  }
+  background-color: transparent;
+  color: transparent;
+  box-shadow: -2px 0px 16px 6px rgba(174,174,174,1);
+  -webkit-box-shadow: -2px 0px 16px 6px rgba(174,174,174,1);
+  -moz-box-shadow: -2px 0px 16px 6px rgba(174,174,174,1);
+}
+
+/* Style the back side */
+.flip-card-back {
   
-  /* Do an horizontal flip when you move the mouse over the flip box container */
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
+  background-color: rgba(230, 214, 190, 0.826);
+  color: white;
+  transform: rotateY(180deg);
+  box-shadow: -2px 0px 16px 6px rgba(174,174,174,1);
+  -webkit-box-shadow: -2px 0px 16px 6px rgba(174,174,174,1);
+  -moz-box-shadow: -2px 0px 16px 6px rgba(174,174,174,1);
+}
+
+.backcard {
+  background-color: rgba(230, 214, 190, 0.826);
+  box-shadow: -2px 0px 16px 6px rgb(226, 226, 226);
+  -webkit-box-shadow: -2px 0px 16px 6px rgba(226,226,226,1);
+  -moz-box-shadow: -2px 0px 16px 6px rgba(226,226,226,1);
+}
+
+.backcard2 {
+  background-color: rgba(230, 214, 190, 0.826);
+  box-shadow: -2px 0px 16px 6px rgb(226, 226, 226);
+  -webkit-box-shadow: -2px 0px 16px 6px rgba(226,226,226,1);
+  -moz-box-shadow: -2px 0px 16px 6px rgba(226,226,226,1);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+.backcard img {
+  width: 25px;
+  font-size: 25px;
+}
+
+.backcard2 img {
+  width: 25px;
+  font-size: 25px;
+}
+
+.backcardtext2 {
+  color: black;
+  font-size: 16px;
   
-  /* Position the front and back side */
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
-  }
-  
-  /* Style the front side (fallback if image is missing) */
-  .flip-card-front {
-    border-radius: 5px;
-    background-color: transparent;
-    color: black;
-  }
-  
-  /* Style the back side */
-  .flip-card-back {
-    border-radius: 5px;
-    background-color: #A4B3B6;
-    color: white;
-    transform: rotateY(180deg);
-  }
+}
