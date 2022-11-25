@@ -56,14 +56,16 @@ margin-right: auto; padding: 15px;">
           <%= link_to party_flat_path(party_flat), class:"text-decoration-none" do %>
               <div class="card-body">
                 <div class="backcard">
-                  <p class="card-text-2"><%= party_flat.name %></p>
                   <p class="card-text-2"><%= party_flat.description %></p>
                   <p class="card-text-2"><%= party_flat.localisation %></p>
                 </div>
                 <div class="backcard2">
                   <p class="backcardtext2"><%= party_flat.people_capacity %> <%= image_tag "https://cdn-icons-png.flaticon.com/512/42/42175.png" %></p>
-                  <p class="backcardtext2"><%= party_flat.price %> $/night</p>
+                  <p class="backcardtext2"><%= party_flat.number_of_room %> $/night</p>
                   <p class="backcardtext2"><%= party_flat.bed_capacity %> <%= image_tag "https://cdn-icons-png.flaticon.com/512/632/632339.png" %></p>
+                </div>  
+                <div class="backcard2">
+                  <p class="backcardtext2"><%= party_flat.agrement_list %></p>
                 </div>
               </div>
           

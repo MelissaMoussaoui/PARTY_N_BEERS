@@ -1,12 +1,11 @@
 <div class="container col-6">
 <div class="container py-5">
-<h1 style="font-family: 'Lobster', cursive; text-align: center; font-size: 60px;">Add a new Party <i class="fa-solid fa-beer-mug-empty"></i></h1>
+<h1 style="font-family: 'Lobster', cursive; text-align: center; font-size: 60px;">Add a new Party </h1>
 </div>
 <div class="container py-5 py-10" style="box-shadow: 10px 41px 95px -1px rgba(77,68,68,0.75);
 -webkit-box-shadow: 10px 41px 95px -1px rgba(77,68,68,0.75);
 -moz-box-shadow: 10px 41px 95px -1px rgba(77,68,68,0.75);">
 <%= simple_form_for(@party_flat) do |f| %>
-  <%= f.input :name %>
   <%= f.input :localisation,
     input_html: {data: {address_autocomplete_target: "address"}},
     wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}  
@@ -19,7 +18,7 @@
   <%= f.input :agrement_list %>
   <%= f.input :price %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit class: "btnsearch" %>
+  <%= f.submit class: "btn btn-info", value: "Add a Party"%>
 <% end %>
 </div>
 </div>
